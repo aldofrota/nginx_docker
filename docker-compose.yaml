@@ -1,0 +1,13 @@
+version: "3"
+services:
+  nginx:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./config/:/etc/nginx/
+      - ../plusweb:/home/ubuntu/plusweb
